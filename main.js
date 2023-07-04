@@ -1,4 +1,4 @@
-const input = document.querySelector("input");
+const input = document.querySelector("#pass");
 const div = document.querySelector(".message");
 
 const password = "marcin";
@@ -11,4 +11,12 @@ input.addEventListener("input", (e) => {
   } else {
     div.textContent = "";
   }
+});
+
+input.addEventListener("focus", (e) => {
+  e.target.classList.add("active");
+});
+
+input.addEventListener("blur", (e) => {
+  e.target.classList.remove("active");
 });
