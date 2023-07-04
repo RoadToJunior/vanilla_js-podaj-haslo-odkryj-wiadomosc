@@ -1,16 +1,21 @@
 const input = document.querySelector("#pass");
 const div = document.querySelector(".message");
 
-const password = "marcin";
-const message = "Have a nice day!";
+const passwords = ["marcin", "wiosna", "lato"];
+const messages = ["Have a nice day!", "trochę zimy trochę lata", "wakacje"];
 
 input.addEventListener("input", (e) => {
-  if (e.target.value === password) {
-    div.textContent = message;
-    e.target.value = "";
-  } else {
-    div.textContent = "";
-  }
+  passwords.forEach((password, i) => {
+    if (password === e.target.value) {
+      div.textContent = messages[i];
+    }
+  });
+  //   if (e.target.value === password) {
+  //     div.textContent = message;
+  //     e.target.value = "";
+  //   } else {
+  //     div.textContent = "";
+  //   }
 });
 
 input.addEventListener("focus", (e) => {
