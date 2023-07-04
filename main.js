@@ -5,9 +5,11 @@ const passwords = ["marcin", "wiosna", "lato"];
 const messages = ["Have a nice day!", "trochę zimy trochę lata", "wakacje"];
 
 input.addEventListener("input", (e) => {
+  div.textContent = "";
   passwords.forEach((password, i) => {
     if (password === e.target.value) {
       div.textContent = messages[i];
+      e.target.value = "";
     }
   });
   //   if (e.target.value === password) {
